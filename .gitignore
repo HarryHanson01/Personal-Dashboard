@@ -1,0 +1,36 @@
+# Virtual envirnoment
+venv/
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+#build/distribution files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+#vs code settings
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# env files
+*.env
+*.ini
+*.toml
+
+# logs
+*.log
+
+#the rest are just extras to be sure
+.ipynb_checkpoints/
+
+Thumbs.db
+
+.mypy_cache/
+.pytest_cache/

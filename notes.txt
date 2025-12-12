@@ -1,0 +1,13 @@
+
+reminder:  commit to git, 
+
+ideas:
+1. make the boxes/modules/panels movable by the user so they can more easily customise their experience.
+
+Python 3.14.2
+Libraries: PyQt6, psutil, pyqtgraph
+
+
+Definitions:
+Panels: The building blocks displayed
+Modules: The specific pieces of information/tools placed within a panel
