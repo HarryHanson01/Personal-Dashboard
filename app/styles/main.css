@@ -1,0 +1,102 @@
+/**
+QMainWindow {
+    background-color: #212121;
+}
+**/
+
+/* Panels */
+#TodoPanel {
+    border: 2px solid #11ff00;  
+    border-radius: 6px;        
+    background-color: #1b1b1b;           
+    margin: 5px;
+}
+
+#WeatherPanel {
+    background-color: #1b1b1b;
+    border: 2px solid #f50000;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+#SystemStatsPanel {
+    background-color: #1b1b1b;
+    border: 2px solid #2979ff;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+/* Todo module stuff */
+#TodoItem {
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #1b1b1b;
+}
+
+#TodoCheckbox::indicator {
+    width: 14px;
+    height: 14px;
+}
+
+#TodoCheckbox::indicator:unchecked {
+    border: 1px solid #777;
+    background: #222;
+}
+
+#TodoCheckbox::indicator:checked {
+    background: #00c853;
+    border: 1px solid #00c853;
+}
+
+/* Add Task Panel */
+#AddTaskPanel {
+    border: 2px solid #11ff00;
+    border-radius: 6px;
+    background-color: #2b2b2b;
+    padding: 10px; 
+}
+
+#AddTaskPanel QLineEdit,
+#AddTaskPanel QTextEdit,
+#AddTaskPanel QDateEdit {
+    background-color: #1b1b1b;
+    border: 1px solid #444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+#AddTaskPanel QLabel {
+    color: #ffffff;
+}
+
+#toggleDueButton {
+    background-color: #1b1b1b;
+    border: 1px solid #444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+#toggleDueButton:hover {
+    background-color: #2b2b2b;
+}
+
+#toggleDueButton:pressed {
+    background-color: #00c853;
+    color: #000;
+}
+
+#addTaskButton {
+    background-color: #11ff00;
+    border: none;
+    border-radius: 4px;
+    color: #000000;
+    font-weight: bold;
+    padding: 6px;
+}
+
+#addTaskButton:hover {
+    background-color: #00c853;
+}
+

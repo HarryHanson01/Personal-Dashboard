@@ -8,12 +8,14 @@ from systemStatsModule import SystemStatsPanel
 from todoModule import TodoPanel
 from weatherModule import WeatherPanel
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.setWindowTitle("My Dashboard")
-        self.setFixedSize(QSize(800, 600))
+        self.resize(1100, 750)
+        self.setMinimumSize(900, 650)
 
         centralWidget = QWidget()
         self.setCentralWidget(centralWidget)
@@ -28,18 +30,23 @@ class MainWindow(QMainWindow):
         todoPanel = TodoPanel()
         weatherPanel = WeatherPanel()
 
+        # this will be deleted later - I want to make the each panel movable by the user.
         #(widget, row, column, rowspan, colspan)
-        dashboardLayout.addWidget(systemStatsPanel, 0, 0, 1, 2)  # big top panel
-        dashboardLayout.addWidget(todoPanel, 1, 0, 1, 1)           # bottom left
-        dashboardLayout.addWidget(weatherPanel, 1, 1, 1, 1)        # bottom right
+        dashboardLayout.addWidget(systemStatsPanel, 0, 0, 1, 3)
+        dashboardLayout.addWidget(todoPanel, 1, 0, 1, 2)
+        dashboardLayout.addWidget(weatherPanel, 1, 2, 1, 1)
 
-        # temporary - remove these upon styling
-        #systemStatsPanel.setStyleSheet("background-color: lightblue; border: 1px solid black;")
-        todoPanel.setStyleSheet("background-color: lightgreen; border: 1px solid black;")
-        weatherPanel.setStyleSheet("background-color: red; border: 1px solid black;")
+        # styling
+        weatherPanel.setObjectName("WeatherPanel")
+        todoPanel.setObjectName("TodoPanel")
+        systemStatsPanel.setObjectName("SystemStatsPanel")
+
 
 
 app = QApplication(sys.argv)
+
+with open("app/styles/main.css", "r") as f:
+    app.setStyleSheet(f.read())
 
 window = MainWindow()
 window.show()

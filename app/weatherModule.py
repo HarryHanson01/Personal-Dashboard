@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout, QFrame
 
-class WeatherPanel(QWidget):
+class WeatherPanel(QFrame):
     def __init__(self):
         super().__init__()
         layout = QVBoxLayout()

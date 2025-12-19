@@ -1,8 +1,8 @@
-from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout, QFrame
 from PyQt6.QtCore import QTimer
 import psutil
 
-class SystemStatsPanel(QWidget):
+class SystemStatsPanel(QFrame):
     def __init__(self):
         super().__init__()
 
@@ -10,6 +10,8 @@ class SystemStatsPanel(QWidget):
         label = QLabel("System Stats Panel")
         layout.addWidget(label)
         self.setLayout(layout)
+
+        #self.setFixedSize(200, 300)
 
         # RAM and CPU
         self.cpuLabel = QLabel("CPU: ")
@@ -22,8 +24,13 @@ class SystemStatsPanel(QWidget):
         self.diskLabel = QLabel("Disk: ")
         layout.addWidget(self.diskLabel)
 
-        self.networkLabel = QLabel("Network: ")
+        self.networkLabel = QLabel("Network usage:")
+        self.uploadLabel = QLabel("Upload: 0.0 Mbps")
+        self.downloadLabel = QLabel("Download: 0.0 Mbps")
         layout.addWidget(self.networkLabel)
+        layout.addWidget(self.uploadLabel)
+        layout.addWidget(self.downloadLabel)
+        
         self.lastNetIo = psutil.net_io_counters()
 
         # Timer to update stats 
@@ -44,9 +51,8 @@ class SystemStatsPanel(QWidget):
 
 
         uploadSpeed, downloadSpeed = self.calculateNetworkUsage()
-        self.networkLabel.setText(
-            f"Network usage:\nUpload: {uploadSpeed:.1f} Mbps\nDownload: {downloadSpeed:.1f} Mbps"
-        )
+        self.uploadLabel.setText(f"Upload: {uploadSpeed:.1f} Mbps")
+        self.downloadLabel.setText(f"Download: {downloadSpeed:.1f} Mbps")
 
 
 
