@@ -1,3 +1,6 @@
+# private files
+config.py
+
 # Virtual envirnoment
 venv/
 # Python cache
